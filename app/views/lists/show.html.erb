@@ -1,3 +1,5 @@
+<%= render "components/navbar" %>
+
 <h1>List Details</h1>
 
 <ul>
@@ -6,7 +8,9 @@
 
 <ul><% @list.bookmarks.each do |bookmark| %>
 <li><%= bookmark.movie.title %>
-  <%= bookmark.comment %>
+  <%= bookmark.movie.overview %>
+  <%= bookmark.movie.poster_url %>
+  <%= bookmark.movie.rating %>
   <%= link_to bookmark_path(bookmark.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
   <i class="fa-solid fa-trash-can"></i>
   <% end %>
@@ -14,3 +18,5 @@
 
 <% end %>
 </ul>
+
+  

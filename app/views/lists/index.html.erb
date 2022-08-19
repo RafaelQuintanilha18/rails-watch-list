@@ -1,8 +1,10 @@
+<%= render "components/navbar" %>
+
 <h1>Lists</h1>
 
 <ol><% @lists.each do |list| %>
   <li>
-  <%= list.name %>
+  <%= link_to list.name, list_path(list.id) %>
   </li>
   <% end %>
 </ol>
