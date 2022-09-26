@@ -4,6 +4,7 @@
 
 <ul>
 <li> <h2><%= @list.name %></h2> </li>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 </ul>
 
 <ul><% @list.bookmarks.each do |bookmark| %>
@@ -18,5 +19,3 @@
 
 <% end %>
 </ul>
-
-  
